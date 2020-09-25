@@ -2,8 +2,13 @@
   "name": "@meeek/utils",
   "version": "1.0.0",
   "author": "meeek",
-  "keywords": ["JavaScript","Nodejs","Utils","Tools","npm-package"],
+  "keywords": ["TypeScript","JavaScript","Nodejs","Utils","Tools"],
   "description": "This is a utility library of zero dependencies for JavaScript.",
+  "homepage": "https://github.com/imeeek/Utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imeeek/Utils"
+  },
   "main": "index.js",
   "scripts": {
   },
