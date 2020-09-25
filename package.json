@@ -1,0 +1,11 @@
+{
+  "name": "@meeek/utils",
+  "version": "1.0.0",
+  "description": "This is a JavaScript tool library",
+  "keywords": ["JavaScript","Utils",""],
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "meeek",
+  "license": "MIT"
+}
