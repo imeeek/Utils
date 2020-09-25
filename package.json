@@ -1,11 +1,11 @@
 {
   "name": "@meeek/utils",
   "version": "1.0.0",
-  "description": "This is a JavaScript tool library",
-  "keywords": ["JavaScript","Utils",""],
+  "author": "meeek",
+  "keywords": ["JavaScript","Nodejs","Utils","Tools","npm-package"],
+  "description": "This is a utility library of zero dependencies for JavaScript.",
   "main": "index.js",
   "scripts": {
   },
-  "author": "meeek",
   "license": "MIT"
 }
