@@ -1,191 +1,142 @@
-const verify = {
-    isIP: function(strIP) {
-        if (isNull(strIP)) return false;
-        const re = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/g;
-        if(re.test(strIP)) {
-            if( RegExp.$1 <256 && RegExp.$2<256 && RegExp.$3<256 && RegExp.$4<256) return true;
-        }
-        return false;
-    }
-}
-export default verify;
+/*! *****************************************************************************
+Copyright (c) 2020-present, meeek
 
-/**用途：校验ip地址的格式
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to use,
+copy,modify, merge, publish, distribute,sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
- 输入：strIP：ip地址
- 返回：如果通过验证返回true,否则返回false；
- **/
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-function isIP
-/*
-用途：检查输入字符串是否为空或者全部都是空格
-输入：str
-返回：
-如果全是空返回true,否则返回false
-*/
-function isNull( str ){
-    if ( str == "" ) return true;
-    var regu = "^[ ]+$";
-    var re = new RegExp(regu);
-    return re.test(str);
-}
-
-/*
-用途：检查输入对象的值是否符合整数格式
-输入：str 输入的字符串
-返回：如果通过验证返回true,否则返回false
-*/
-function isInteger( str ){
-    var regu = /^[-]{0,1}[0-9]{1,}$/;
-    return regu.test(str);
-}
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+***************************************************************************** */
 
 
-/*
-用途：检查输入字符串是否符合正整数格式
-输入：
-s：字符串
-返回：
-如果通过验证返回true,否则返回false
-*/
-function isNumber( s ){
-    var regu = "^[0-9]+$";
-    var re = new RegExp(regu);
-    if (s.search(re) != -1) {
-        return true;
-    } else {
-        return false;
-    }
-}
-/*
-用途：检查输入字符串是否是带小数的数字格式,可以是负数
-输入：
-s：字符串
-返回：
-如果通过验证返回true,否则返回false
-*/
-function isDecimal( str ){
-    if(isInteger(str)) return true;
-    var re = /^[-]{0,1}(\d+)[\.]+(\d+)$/;
-    if (re.test(str)) {
-        if(RegExp.$1==0&&RegExp.$2==0) return false;
-        return true;
-    } else {
-        return false;
-    }
-}
-/*
-用途：检查输入对象的值是否符合端口号格式
-输入：str 输入的字符串
-返回：如果通过验证返回true,否则返回false
-*/
-function isPort( str ){
-    return (isNumber(str) && str<65536);
-}
-/*
-用途：检查输入对象的值是否符合E-Mail格式
-输入：str 输入的字符串
-返回：如果通过验证返回true,否则返回false
-*/
-function isEmail( str ){
-    var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/;
-    if(myReg.test(str)) return true;
-    return false;
-}
-/*
-用途：检查输入字符串是否符合金额格式
-格式定义为带小数的正数，小数点后最多三位
-输入：
-s：字符串
-返回：
-如果通过验证返回true,否则返回false
-*/
-function isMoney( s ){
-    var regu = "^[0-9]+[\.][0-9]{0,3}$";
-    var re = new RegExp(regu);
-    if (re.test(s)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-/*
-用途：检查输入字符串是否只由英文字母和数字和下划线组成
-输入：
-s：字符串
-返回：
-如果通过验证返回true,否则返回false
-*/
-function isNumberOr_Letter( s ){//判断是否是数字或字母
-    var regu = "^[0-9a-zA-Z\_]+$";
-    var re = new RegExp(regu);
-    if (re.test(s)) {
-        return true;
-    }else{
-        return false;
-    }
-}
-/*
-用途：检查输入字符串是否只由英文字母和数字组成
-输入：
-s：字符串
-返回：
-如果通过验证返回true,否则返回false
-*/
-function isNumberOrLetter( s ){//判断是否是数字或字母
-    var regu = "^[0-9a-zA-Z]+$";
-    var re = new RegExp(regu);
-    if (re.test(s)) {
-        return true;
-    }else{
-        return false;
-    }
-}
-/*
-用途：检查输入字符串是否只由汉字、字母、数字组成
-输入：
-value：字符串
-返回：
-如果通过验证返回true,否则返回false
-*/
-function isChinaOrNumbOrLett( s ){//判断是否是汉字、字母、数字组成
-    var regu = "^[0-9a-zA-Z\u4e00-\u9fa5]+$";
-    var re = new RegExp(regu);
-    if (re.test(s)) {
-        return true;
-    }else{
-        return false;
-    }
-}
-/*
-用途：判断是否是日期
-输入：date：日期；fmt：日期格式
-返回：如果通过验证返回true,否则返回false
-*/
-function isDate( date, fmt ) {
-    if (fmt==null) fmt="yyyyMMdd";
-    var yIndex = fmt.indexOf("yyyy");
-    if(yIndex==-1) return false;
-    var year = date.substring(yIndex,yIndex+4);
-    var mIndex = fmt.indexOf("MM");
-    if(mIndex==-1) return false;
-    var month = date.substring(mIndex,mIndex+2);
-    var dIndex = fmt.indexOf("dd");
-    if(dIndex==-1) return false;
-    var day = date.substring(dIndex,dIndex+2);
-    if(!isNumber(year)||year>"2100" || year< "1900") return false;
-    if(!isNumber(month)||month>"12" || month< "01") return false;
-    if(day>getMaxDay(year,month) || day< "01") return false;
-    return true;
+/**
+ * 是否为有效移动电话号码
+ * @param str
+ * @return boolean
+ */
+const isMobilePhone = function (str) {
+    return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str);
 }
 
-function getMaxDay(year,month) {
-    if(month==4||month==6||month==9||month==11)
-        return "30";
-    if(month==2)
-        if(year%4==0&&year%100!=0 || year%400==0)
-            return "29";
-        else
-            return "28";
-    return "31";
+/**
+ * 是否为有效邮箱地址
+ * @param str
+ * @return boolean
+ */
+const isEmail = function (str) {
+    return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str);
+}
+
+/**
+ * 是否为有效网址
+ * @param str
+ * @return boolean
+ */
+const isURL = function (str) {
+    return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(str);
+}
+
+/**
+ * 是否为有效邮编
+ * @param str
+ * @return boolean
+ */
+const isPostcode = function (str) {
+    return /^[1-9]\d{5}$/.test(str);
+}
+
+/**
+ * 是否为有效身份证号码
+ * @param str
+ * @return boolean
+ */
+const isIP = function (str) {
+    return /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/.test(str);
+}
+
+/**
+ * 是否为有效身份证
+ * @param str
+ * @return boolean
+ */
+const isIDCard = function (sId) {
+    if (!/(^\d{15}$)|(^\d{17}(\d|X|x)$)/.test(sId)) {
+        // 身份证长度非法
+        return false
+    }
+    //身份证城市
+    const aCity={
+        11:"北京",
+        12:"天津",
+        13:"河北",
+        14:"山西",
+        15:"内蒙古",
+        21:"辽宁",
+        22:"吉林",
+        23:"黑龙江",
+        31:"上海",
+        32:"江苏",
+        33:"浙江",
+        34:"安徽",
+        35:"福建",
+        36:"江西",
+        37:"山东",
+        41:"河南",
+        42:"湖北",
+        43:"湖南",
+        44:"广东",
+        45:"广西",
+        46:"海南",
+        50:"重庆",
+        51:"四川",
+        52:"贵州",
+        53:"云南",
+        54:"西藏",
+        61:"陕西",
+        62:"甘肃",
+        63:"青海",
+        64:"宁夏",
+        65:"新疆",
+        71:"台湾",
+        81:"香港",
+        82:"澳门",
+        91:"国外"
+    };
+    if(!aCity[parseInt(sId.substr(0,2))]) {
+        // 地区非法
+        return false
+    }
+
+    // 出生日期验证
+    const sBirthday=(sId.substr(6,4)+"-"+Number(sId.substr(10,2))+"-"+Number(sId.substr(12,2))).replace(/-/g,"/"),
+        d = new Date(sBirthday)
+    if(sBirthday != (d.getFullYear()+"/"+ (d.getMonth()+1) + "/" + d.getDate())) {
+        // 出生日期非法
+        return false
+    }
+
+    // 身份证号码校验
+    var sum = 0,
+        weights =  [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2],
+        codes = "10X98765432"
+    for (var i = 0; i < sId.length - 1; i++) {
+        sum += sId[i] * weights[i];
+    }
+    const last = codes[sum % 11]; //计算出来的最后一位身份证号码
+    if (sId[sId.length-1] != last) {
+        // 身份证号非法
+        return false;
+    }
+    return true
 }

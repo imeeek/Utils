@@ -1,5 +1,5 @@
 /*! *****************************************************************************
-Copyright (c) 2020-present, Meng Kang(meeek) Zhang
+Copyright (c) 2020-present, meeek
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -19,50 +19,12 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
 
-export class DateUtils{
 
-    /**
-     * GMT时间转换为 正常北京时间(string类型)
-     * @param time
-     * @constructor
-     */
-    GMTToStr(time){
-        let date = new Date(time);
-        let Str=date.getFullYear() + '-' +
-            (date.getMonth() + 1) + '-' +
-            date.getDate() + ' ' +
-            date.getHours() + ':' +
-            date.getMinutes() + ':' +
-            date.getSeconds();
-        return Str;
-    }
-
-    /**
-     * string类型转date 时间戳
-     * @param date
-     */
-
-    public str_date(date){
-
-        console.log("日期转换：");
-        console.log(date);
-
-
-        //前台数据转换获得时间戳 传给后台
-        // @ts-ignore
-        var date_m=Date.parse(date);
-        // console.log(date_m);
-
-        //将时间戳转换为GMT 格式时间
-        var strDate= new Date(date_m);
-        // console.log(strDate);
-
-        //得到正常北京时间
-        // @ts-ignore
-        let GMTDate= this.GMTToStr(strDate);
-        // console.log(GMTDate);
-
-        //返回时间戳
-        return  date_m;
-    }
+/**
+ * 获取对象的类型
+ * @param o 对象
+ * @return String [String | Number | Boolean | Function | Null | Undefined | Object | Array | Date | RegExp | Error | Symbol | Promise | Set]
+ */
+const getType = function (o) {
+    return Object.prototype.toString.call(o).slice(8, -1);
 }

@@ -2,7 +2,14 @@
   "name": "@meeek/utils",
   "version": "1.0.0",
   "author": "meeek",
-  "keywords": ["TypeScript","JavaScript","Nodejs","Utils","Tools"],
+  "keywords": [
+    "JavaScript",
+    "Nodejs",
+    "Utils",
+    "Tools",
+    "Verify",
+    "Date"
+  ],
   "description": "This is a utility library of zero dependencies for JavaScript.",
   "homepage": "https://github.com/imeeek/Utils#readme",
   "repository": {
@@ -11,6 +18,9 @@
   },
   "main": "index.js",
   "scripts": {
+    "build": "webpack"
   },
+  "dependencies": {},
+  "devDependencies": {},
   "license": "MIT"
 }
