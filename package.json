@@ -21,6 +21,9 @@
     "build": "webpack"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "standard": "^14.3.4"
+  },
   "license": "MIT"
 }

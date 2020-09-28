@@ -27,7 +27,7 @@ DEALINGS IN THE SOFTWARE.
  * @return boolean
  */
 const isMobilePhone = function (str) {
-    return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str);
+    return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str)
 }
 
 /**
@@ -36,7 +36,7 @@ const isMobilePhone = function (str) {
  * @return boolean
  */
 const isEmail = function (str) {
-    return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str);
+    return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str)
 }
 
 /**
@@ -45,7 +45,7 @@ const isEmail = function (str) {
  * @return boolean
  */
 const isURL = function (str) {
-    return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(str);
+    return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(str)
 }
 
 /**
@@ -54,7 +54,7 @@ const isURL = function (str) {
  * @return boolean
  */
 const isPostcode = function (str) {
-    return /^[1-9]\d{5}$/.test(str);
+    return /^[1-9]\d{5}$/.test(str)
 }
 
 /**
@@ -63,5 +63,5 @@ const isPostcode = function (str) {
  * @return boolean
  */
 const isIP = function (str) {
-    return /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/.test(str);
+    return /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/.test(str)
 }

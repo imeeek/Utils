@@ -36,9 +36,9 @@ const isEmpty = function (str) {
  * @param target
  * @returns {Boolean}
  */
-const isEquals=function(source,target){
-    return source==target;
-};
+const isEquals = function (source, target) {
+    return source == target
+}
 
 
 /*
@@ -48,8 +48,8 @@ const isEquals=function(source,target){
  * @returns {Boolean}
  */
 const isEqualsIgnoreCase = function (source, target) {
-    return source.toUpperCase() == target.toUpperCase();
-};
+    return source.toUpperCase() == target.toUpperCase()
+}
 
 
 /**
@@ -58,18 +58,18 @@ const isEqualsIgnoreCase = function (source, target) {
  * @param  {type} type:  1-所有空格  2-前后空格  3-前空格 4-后空格
  * @return {String}
  */
-const trim = function (string,type) {
+const trim = function (string, type) {
     type = type || 1
     switch (type) {
-        case 1:
-            return string.replace(/\s+/g, "");
-        case 2:
-            return string.replace(/(^\s*)|(\s*$)/g, "");
-        case 3:
-            return string.replace(/(^\s*)/g, "");
-        case 4:
-            return string.replace(/(\s*$)/g, "");
-        default:
-            return string;
+    case 1:
+        return string.replace(/\s+/g, '')
+    case 2:
+        return string.replace(/(^\s*)|(\s*$)/g, '')
+    case 3:
+        return string.replace(/(^\s*)/g, '')
+    case 4:
+        return string.replace(/(\s*$)/g, '')
+    default:
+        return string
     }
 }
