@@ -24,12 +24,12 @@ module.exports = {
         // "no-catch-shadow": 2,//禁止catch子句参数与外部作用域变量同名
         // "no-class-assign": 2,//禁止给类赋值
         // "no-cond-assign": 2,//禁止在条件表达式中使用赋值语句
-        // "no-console": 1,//禁止使用console
+        'no-console': 1, // 禁止使用console
         // "no-const-assign": 2,//禁止修改const声明的变量
         // "no-constant-condition": 2,//禁止在条件中使用常量表达式 if(true) if(1)
         // "no-continue": 0,//禁止使用continue
         // "no-control-regex": 2,//禁止在正则表达式中使用控制字符
-        // "no-debugger": 2,//禁止使用debugger
+        'no-debugger': 2, // 禁止使用debugger
         // "no-delete-var": 2,//不能对var声明的变量使用delete操作符
         // "no-div-regex": 1,//不能使用看起来像除法的正则表达式/=foo/
         // "no-dupe-keys": 2,//在创建对象字面量时不允许键重复 {a:1,a:1}
@@ -102,7 +102,7 @@ module.exports = {
         // "no-trailing-spaces": 1,//一行结束后面不要有空格
         // "no-this-before-super": 0,//在调用super()之前不能使用this或super
         'no-throw-literal': 1, // 禁止抛出字面量错误 throw "error";
-        // "no-undef": 1,//不能有未定义的变量
+        'no-undef': 1, // 不能有未定义的变量
         // "no-undef-init": 2,//变量初始化时不能直接给它赋值为undefined
         // "no-undefined": 2,//不能使用undefined
         // "no-unexpected-multiline": 2,//避免多行表达式
@@ -111,10 +111,10 @@ module.exports = {
         // "no-unreachable": 2,//不能有无法执行的代码
         // "no-unused-expressions": 2,//禁止无用的表达式
         // "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],//不能有声明后未被使用的变量或参数
-        // "no-use-before-define": 2,//未定义前不能使用
+        'no-use-before-define': 2, // 未定义前不能使用
         // "no-useless-call": 2,//禁止不必要的call和apply
         // "no-void": 2,//禁用void操作符
-        // "no-var": 0,//禁用var，用let和const代替
+        'no-var': 0, // 禁用var，用let和const代替
         // "no-warning-comments": [1, { "terms": ["todo", "fixme", "xxx"], "location": "start" }],//不能有警告备注
         // "no-with": 2,//禁用with
         // "array-bracket-spacing": [2, "never"],//是否允许非空数组里面有多余的空格
@@ -124,7 +124,7 @@ module.exports = {
         // "block-scoped-var": 0,//块语句中使用var
         // "brace-style": [1, "1tbs"],//大括号风格
         // "callback-return": 1,//避免多次调用回调什么的
-        // "camelcase": 2,//强制驼峰法命名
+        camelcase: 2, // 强制驼峰法命名
         // "comma-dangle": [2, "never"],//对象字面量项尾不能有逗号
         // "comma-spacing": 0,//逗号前后的空格
         // "comma-style": [2, "last"],//逗号风格，换行时在行首还是行尾
