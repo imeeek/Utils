@@ -1,7 +1,5 @@
-/lib/
-/libs/
-/build/
-/config/
+/.idea/
 /coverage/
-/dist/
+/docs/
+/node_modules/
 # /*.js
