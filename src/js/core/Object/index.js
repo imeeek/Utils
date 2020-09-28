@@ -26,6 +26,6 @@ DEALINGS IN THE SOFTWARE.
  * @param o 对象
  * @return String [String | Number | Boolean | Function | Null | Undefined | Object | Array | Date | RegExp | Error | Symbol | Promise | Set]
  */
-const getType = function (o) {
+export const getType = function (o) {
     return Object.prototype.toString.call(o).slice(8, -1);
 }

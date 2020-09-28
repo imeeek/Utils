@@ -24,6 +24,6 @@ DEALINGS IN THE SOFTWARE.
  * 获取随机颜色
  * @return color
  */
-const randomColor = function () {
-    return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
+export const getColor = function () {
+    return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6)
 }

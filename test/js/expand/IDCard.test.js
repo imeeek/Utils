@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THESOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
 
-import * as IDCardUtils from '../../../src/js/exp/IDCard'
+import * as IDCard from '../../../src/js/exp/IDCard'
 
 /**
  * 验证身份证是否有效
@@ -28,7 +28,7 @@ import * as IDCardUtils from '../../../src/js/exp/IDCard'
  */
 test('验证身份证是否有效：', () => {
     const id = '654123199808181888'
-    expect(IDCardUtils.checkIdCardNo(id)).toBe(false)
+    expect(IDCard.checkIdCardNo(id)).toBe(false)
 })
 
 /**
@@ -37,5 +37,5 @@ test('验证身份证是否有效：', () => {
  */
 test('获取身份证信息：', () => {
     const id = '654123199208181888'
-    expect(IDCardUtils.getIdCardInfo(id)).toEqual({ gender: '女', birthday: '1992-08-18' })
+    expect(IDCard.getIdCardInfo(id)).toEqual({ gender: '女', birthday: '1992-08-18' })
 })

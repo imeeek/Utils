@@ -20,56 +20,12 @@ OUT OF OR IN CONNECTION WITH THESOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
 
-
-/*
- * 判断字符串是否为空
- * @param str
- * @returns {Boolean}
- */
-export const isEmpty = function (str) {
-    return str != null && str.length > 0
-}
-
-/*
- * 判断两个字符串子否相同
- * @param source
- * @param target
- * @returns {Boolean}
- */
-export const isEquals = function (source, target) {
-    return source == target
-}
-
-
-/*
- * 忽略大小写判断字符串是否相同
- * @param source
- * @param target
- * @returns {Boolean}
- */
-export const isEqualsIgnoreCase = function (source, target) {
-    return source.toUpperCase() == target.toUpperCase()
-}
-
+import * as Random from '../../../src/js/core/Random'
 
 /**
- * 去除空格
- * @param  {string}
- * @param  {type} type:  1-所有空格  2-前后空格  3-前空格 4-后空格
- * @return {String}
+ * 获取随机颜色
  */
-export const trim = function (string, type) {
-    type = type || 1
-    switch (type) {
-    case 1:
-        return string.replace(/\s+/g, '')
-    case 2:
-        return string.replace(/(^\s*)|(\s*$)/g, '')
-    case 3:
-        return string.replace(/(^\s*)/g, '')
-    case 4:
-        return string.replace(/(\s*$)/g, '')
-    default:
-        return string
-    }
-}
+test('获取随机颜色：', () => {
+    const value = Random.getColor()
+    expect(value).toBe('123')
+})
