@@ -23,10 +23,19 @@ DEALINGS IN THE SOFTWARE.
 import * as IDCardUtils from '../../../src/js/exp/IDCard'
 
 /**
+ * 验证身份证是否有效
+ * @see jest https://jestjs.io/docs/zh-Hans/using-matchers
+ */
+test('验证身份证是否有效：', () => {
+    const id = '654123199808181888'
+    expect(IDCardUtils.checkIdCardNo(id)).toBe(false)
+})
+
+/**
  * 获取身份证信息
  * @see jest https://jestjs.io/docs/zh-Hans/using-matchers
  */
 test('获取身份证信息：', () => {
-    const id = '654123199209301775'
-    expect(IDCardUtils.getIdCardInfo(id)).toEqual({ gender: '男', birthday: '1992-09-30' })
+    const id = '654123199208181888'
+    expect(IDCardUtils.getIdCardInfo(id)).toEqual({ gender: '女', birthday: '1992-08-18' })
 })
