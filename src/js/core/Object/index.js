@@ -31,11 +31,11 @@ const ObjectUtil = {
      * @memberOf module:ObjectUtil
      * @method getType
      * @desc 获取对象的类型
-     * @param o {Any} 要判断类型的对象
+     * @param object {Object} 要判断类型的对象
      * @return {String} 'String','Number','Boolean','Function','Null','Undefined','Object','Array','Date','RegExp','Error','Symbol','Promise','Set'
      */
-    getType: function (o) {
-        return Object.prototype.toString.call(o).slice(8, -1)
+    getType: function (object) {
+        return Object.prototype.toString.call(object).slice(8, -1)
     }
 }
 
