@@ -18,7 +18,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "doc": "jsdoc -c jsdoc.config.js -r -d docs/html",
+    "doc": "npx jsdoc -c jsdoc.config.js -r -d docs/html",
     "test": "jest"
   },
   "jest": {
