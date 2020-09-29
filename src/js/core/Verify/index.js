@@ -23,8 +23,8 @@ DEALINGS IN THE SOFTWARE.
 
 /**
  * 是否为有效移动电话号码
- * @param str
- * @return boolean
+ * @param str {String}
+ * @return {Boolean}
  */
 export const isMobilePhone = function (str) {
     return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str)
@@ -32,8 +32,8 @@ export const isMobilePhone = function (str) {
 
 /**
  * 是否为有效邮箱地址
- * @param str
- * @return boolean
+ * @param str {String}
+ * @return {Boolean}
  */
 export const isEmail = function (str) {
     return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str)
@@ -41,8 +41,8 @@ export const isEmail = function (str) {
 
 /**
  * 是否为有效网址
- * @param str
- * @return boolean
+ * @param str {String}
+ * @return {Boolean}
  */
 export const isURL = function (str) {
     return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(str)
@@ -50,18 +50,9 @@ export const isURL = function (str) {
 
 /**
  * 是否为有效邮编
- * @param str
- * @return boolean
+ * @param str {String}
+ * @return {Boolean}
  */
 export const isPostcode = function (str) {
     return /^[1-9]\d{5}$/.test(str)
-}
-
-/**
- * 是否为有效IP
- * @param str
- * @return boolean
- */
-export const isIP = function (str) {
-    return /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/.test(str)
 }

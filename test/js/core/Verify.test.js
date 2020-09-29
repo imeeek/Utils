@@ -20,29 +20,36 @@ OUT OF OR IN CONNECTION WITH THESOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
 
-import * as Random from '../../../src/js/core/Random'
+import * as Verify from '../../../src/js/core/Verify'
 
 /**
- * 获取范围内随机数
+ * 是否电话号码
  */
-test('获取随机数：', () => {
-    const value = Random.getNumber(-199, 200)
-    expect(value).toBeGreaterThanOrEqual(-199)
-    expect(value).toBeLessThanOrEqual(200)
+test('是否电话号码：', () => {
+    const value = Verify.isMobilePhone('18988888888')
+    expect(value).toBeTruthy()
 })
 
 /**
- * 获取随字符串
+ * 是否Email
  */
-test('获取随字符串：', () => {
-    const value = Random.getString(15)
-    expect(value).toHaveLength(15)
+test('是否Email：', () => {
+    const value = Verify.isEmail('351264833@qq.com')
+    expect(value).toBeTruthy()
 })
 
 /**
- * 获取随机颜色
+ * 是否URL
  */
-test('获取随机颜色：', () => {
-    const value = Random.getColor('rgb')
-    expect(value).not.toBeNull()
+test('是否URL：', () => {
+    const value = Verify.isURL('https://jestjs.io/docs/zh-Hans/expect#tohavepropertykeypath-value')
+    expect(value).toBeTruthy()
+})
+
+/**
+ * 是否邮编
+ */
+test('是否邮编：', () => {
+    const value = Verify.isPostcode('830000')
+    expect(value).toBeTruthy()
 })

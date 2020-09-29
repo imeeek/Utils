@@ -24,11 +24,19 @@ import * as IDCard from '../../../src/js/exp/IDCard'
 
 /**
  * 验证身份证是否有效
- * @see jest https://jestjs.io/docs/zh-Hans/using-matchers
  */
 test('验证身份证是否有效：', () => {
-    const id = '654123199808181888'
-    expect(IDCard.checkIdCardNo(id)).toBe(false)
+    const id = '650103199808188832'
+    expect(IDCard.checkIdCardNo(id)).toBeTruthy()
+})
+
+/**
+ * 获取身份证信息
+ */
+test('获取身份证信息：', () => {
+    const value = IDCard.getIdCardInfo('650103199808188832')
+    expect(value).toHaveProperty('gender', '男')
+    expect(value).toHaveProperty('birthday', '1998-08-18')
 })
 
 /**
@@ -36,6 +44,7 @@ test('验证身份证是否有效：', () => {
  * @see jest https://jestjs.io/docs/zh-Hans/using-matchers
  */
 test('获取身份证信息：', () => {
-    const id = '654123199208181888'
-    expect(IDCard.getIdCardInfo(id)).toEqual({ gender: '女', birthday: '1992-08-18' })
+    const value = IDCard.getIdCardInfo('650103199808188832')
+    expect(value).toHaveProperty('gender', '男')
+    expect(value).toHaveProperty('birthday', '1998-08-18')
 })
