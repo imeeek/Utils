@@ -54,7 +54,7 @@ module.exports = {
         'no-debugger': 2, // 禁止使用debugger
         // "no-delete-var": 2,//不能对var声明的变量使用delete操作符
         // "no-div-regex": 1,//不能使用看起来像除法的正则表达式/=foo/
-        'no-useless-escape': 1,
+        'no-useless-escape': 1, // 禁用不必要的转义字符
         // "no-dupe-keys": 2,//在创建对象字面量时不允许键重复 {a:1,a:1}
         // "no-dupe-args": 2,//函数参数不能重复
         // "no-duplicate-case": 2,//switch中的case标签不能重复
@@ -91,7 +91,7 @@ module.exports = {
         // "linebreak-style": [0, "windows"],//换行风格
         // "no-multi-spaces": 1,//不能用多余的空格
         // "no-multi-str": 2,//字符串不能用\换行
-          'no-multiple-empty-lines': [1, { max: 3 }], // 空行最多不能超过2行
+        'no-multiple-empty-lines': [2, { max: 2 }], // 空行最多不能超过2行
         // "no-native-reassign": 2,//不能重写native对象
         // "no-negated-in-lhs": 2,//in 操作符的左边不能有!
         // "no-nested-ternary": 0,//禁止使用嵌套的三目运算
