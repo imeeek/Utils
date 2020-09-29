@@ -19,58 +19,33 @@ WHETHER IN AN ACTIONOF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THESOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
-
-
+// jsdoc -c config.js -r -d docs
 /**
- * @module VerifyUtil
- * @desc 对象工具类
- * @author meeek
- * @date 2020年9月29日
+ * 使用步骤：
+ *      1、全局安装jsdoc: npm install jsdoc -g
+ *      2、项目目录配置config: jsdoc.config.js
+ *      3、生成项目HTML文档: jsdoc -c jsdoc.config.js -r -d docs/html
+ * @see https://www.xdnote.com/javascript-doc/
  */
-const VerifyUtil = {
-    /**
-     * @memberOf module:VerifyUtil
-     * @method isMobilePhone
-     * @desc 是否为有效移动电话号码
-     * @param str {String}
-     * @return {Boolean}
-     */
-    isMobilePhone: function (str) {
-        return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str)
+module.exports = {
+    tags: {
+        allowUnknownTags: true
     },
-
-    /**
-     * @memberOf module:VerifyUtil
-     * @method isEmail
-     * @desc 是否为有效邮箱地址
-     * @param str {String}
-     * @return {Boolean}
-     */
-    isEmail: function (str) {
-        return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str)
+    source: {
+        include: ['./src/js'],
+        exclude: ['./src/js/index.js'],
+        includePattern: '.+\\.js(doc|x)?$',
+        excludePattern: '(^|\\/|\\\\)_'
     },
-
-    /**
-     * @memberOf module:VerifyUtil
-     * @method isURL
-     * @desc 是否为有效网址
-     * @param str {String}
-     * @return {Boolean}
-     */
-    isURL: function (str) {
-        return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(str)
-    },
-
-    /**
-     * @memberOf module:VerifyUtil
-     * @method isPostcode
-     * @desc 是否为有效邮编
-     * @param str {String}
-     * @return {Boolean}
-     */
-    isPostcode: function (str) {
-        return /^[1-9]\d{5}$/.test(str)
+    plugins: [
+        'plugins/markdown'
+    ],
+    recurseDepth: 10,
+    templates: {
+        cleverLinks: true,
+        monospaceLinks: true,
+        default: {
+            outputSourceFiles: true
+        }
     }
 }
-
-export default VerifyUtil

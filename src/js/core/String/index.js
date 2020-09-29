@@ -21,55 +21,79 @@ DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
 
 
-/*
- * 判断字符串是否为空
- * @param str
- * @returns {Boolean}
- */
-export const isEmpty = function (str) {
-    return str != null && str.length > 0
-}
-
-/*
- * 判断两个字符串子否相同
- * @param source
- * @param target
- * @returns {Boolean}
- */
-export const isEquals = function (source, target) {
-    return source == target
-}
-
-
-/*
- * 忽略大小写判断字符串是否相同
- * @param source
- * @param target
- * @returns {Boolean}
- */
-export const isEqualsIgnoreCase = function (source, target) {
-    return source.toUpperCase() == target.toUpperCase()
-}
-
-
 /**
- * 去除空格
- * @param  {string}
- * @param  {type} type:  1-所有空格  2-前后空格  3-前空格 4-后空格
- * @return {String}
+ * @module StringUtil
+ * @desc 对象工具类
+ * @author meeek
+ * @date 2020年9月29日
  */
-export const trim = function (string, type) {
-    type = type || 1
-    switch (type) {
-    case 1:
-        return string.replace(/\s+/g, '')
-    case 2:
-        return string.replace(/(^\s*)|(\s*$)/g, '')
-    case 3:
-        return string.replace(/(^\s*)/g, '')
-    case 4:
-        return string.replace(/(\s*$)/g, '')
-    default:
-        return string
+const StringUtil = {
+    /**
+     * @memberOf module:StringUtil
+     * @method getType
+     * @desc 获取对象的类型
+     * @param o {Any} 要判断类型的对象
+     * @return {String} 'String','Number','Boolean','Function','Null','Undefined','Object','Array','Date','RegExp','Error','Symbol','Promise','Set'
+     */
+    /**
+     * @memberOf module:StringUtil
+     * @method isEmpty
+     * @desc 判断字符串是否为空
+     * @param str {String}
+     * @return {Boolean}
+     */
+    isEmpty: function (str) {
+        return str != null && str.length > 0
+    },
+
+    /**
+     * @memberOf module:StringUtil
+     * @method isEquals
+     * @desc 判断两个字符串子否相同
+     * @param source {String} 源字符串
+     * @param target {String} 目标字符串
+     * @return {Boolean}
+     */
+    isEquals: function (source, target) {
+        return source == target
+    },
+
+    /**
+     * @memberOf module:StringUtil
+     * @method isEqualsIgnoreCase
+     * @desc 忽略大小写判断字符串是否相同
+     * @param source {String} 源字符串
+     * @param target {String} 目标字符串
+     * @return {Boolean}
+     */
+    isEqualsIgnoreCase: function (source, target) {
+        return source.toUpperCase() == target.toUpperCase()
+    },
+
+
+    /**
+     * @memberOf module:StringUtil
+     * @method trim
+     * @desc 去除空格
+     * @param  str {String}
+     * @param  type {Number} 1-所有空格  2-前后空格  3-前空格 4-后空格
+     * @return {String}
+     */
+    trim: function (str, type) {
+        type = type || 1
+        switch (type) {
+        case 1:
+            return str.replace(/\s+/g, '')
+        case 2:
+            return str.replace(/(^\s*)|(\s*$)/g, '')
+        case 3:
+            return str.replace(/(^\s*)/g, '')
+        case 4:
+            return str.replace(/(\s*$)/g, '')
+        default:
+            return str
+        }
     }
 }
+
+export default StringUtil

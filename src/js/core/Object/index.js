@@ -20,12 +20,23 @@ OUT OF OR IN CONNECTION WITH THESOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
 
-
 /**
- * 获取对象的类型
- * @param o 对象
- * @return String [String | Number | Boolean | Function | Null | Undefined | Object | Array | Date | RegExp | Error | Symbol | Promise | Set]
+ * @module ObjectUtil
+ * @desc 对象工具类
+ * @author meeek
+ * @date 2020年9月29日
  */
-export const getType = function (o) {
-    return Object.prototype.toString.call(o).slice(8, -1);
+const ObjectUtil = {
+    /**
+     * @memberOf module:ObjectUtil
+     * @method getType
+     * @desc 获取对象的类型
+     * @param o {Any} 要判断类型的对象
+     * @return {String} 'String','Number','Boolean','Function','Null','Undefined','Object','Array','Date','RegExp','Error','Symbol','Promise','Set'
+     */
+    getType: function (o) {
+        return Object.prototype.toString.call(o).slice(8, -1)
+    }
 }
+
+export default ObjectUtil
