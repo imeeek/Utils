@@ -1,6 +1,6 @@
 {
   "name": "@meeek/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "meeek",
   "keywords": [
     "JavaScript",
@@ -19,6 +19,7 @@
   "main": "index.js",
   "scripts": {
     "doc": "npx jsdoc -c jsdoc.config.js -r -d docs/html",
+    "npm": "npm publish",
     "test": "jest"
   },
   "jest": {
